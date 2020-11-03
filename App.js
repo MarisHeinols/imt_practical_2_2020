@@ -1,86 +1,89 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  _ScrollView,
-  ScrollView,
-  Image,
-} from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { version } from 'react-dom';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   return (
-    <View>
-      <View style={styles.picContainer}>
-        <Image
-          style={styles.cloudPic}
-          source={require("./assets/cloud.png")}
+<View>
+      <View style={styles.headerHello}>
+        <View>
+          <Image
+            source={require("./assets/TestLogo.png")}
+            style={styles.LogoTop}
+          ></Image>
+        </View>
+        <View style={{padding:10,}}>
+          <Text style ={styles.mainText}>Hello world</Text>
+        </View>
+      </View>
+      <View style = {styles.bodyText}>
+        <Text style = {styles.mainText}>Hello world from G5</Text>
+        <Text style= {styles.mainText}>Member:<Text style={{fontWeight: "bold"}}> Aleksandrs Barbins</Text></Text>
+      </View>
+      <View style={styles.bodyText2}>
+        <Text style= {styles.mainText}>This is my, Aleksandrs Barbins</Text>
+        <Text style= {styles.mainText}>first react native application!</Text>
+        <Text style= {styles.mainText}>Nice to see you here!</Text>
+      </View>
+      <View style={styles.footer}>
+        <Image 
+        source={require("./assets/TestLogo.png")}
+        style={styles.avatarLogog}
         ></Image>
-        <Text style={{color:"grey",fontSize:20}}>Hello world</Text>
-      </View>
-      <View style={styles.containerOne}>
-        <View>
-          <Text style={styles.mainText}>Hello world from group 5 </Text>
-          <Text style={styles.mainText}>
-            Member:
-            <Text style={{ color: "black", fontWeight: "bold" }}>
-              Maris Heinols{" "}
-            </Text>
-          </Text>
-        </View>
-      </View>
-      <View style={styles.containerTwo}>
-        <View>
-          <Text style={styles.mainText}>This is my Maris Heinols,</Text>
-          <Text style={styles.mainText}>first react native application.</Text>
-          <Text style={styles.mainText}>Nice to see you here!</Text>
-        </View>
-      </View>
-      <View style={styles.userPicContainer}>
-        <Image style={styles.userPic} source={require('./assets/user.jpg')}></Image>
-        <Text style={{paddingTop:5,fontWeight:"bold",fontStyle:"italic",color:"grey"}}>Maris Heinols</Text>
+
+        <Text style={styles.avatarName}> Aleksandrs Barbins</Text>
+        
+       
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  containerOne: {
-    paddingTop: "30%",
-    paddingLeft: "20%",
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-  mainText: {
-    color: "grey",
-  },
-  containerTwo: {
-    paddingTop: "10%",
-    paddingLeft: "20%",
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-  picContainer: {
+
+  headerHello: {
     justifyContent: "center",
     alignItems: "center",
-    paddingTop:60,
+    paddingTop: 100,
+    
 
   },
-  cloudPic: {
-    resizeMode:"stretch",
-    height: 150,
-    width:150,
-    
+  LogoTop: {
+    resizeMode: "stretch",
+    height: 80,
+    width: 80,
+    padding: 20,
   },
-  userPicContainer:{
-    paddingTop:'30%',
-    justifyContent:"center",
-    alignItems:"center"
+  mainText:{
+    color: "grey",
+    fontSize: 18,
   },
-  userPic:{
-    height:50,
-    width:50,
+  bodyText: {
+    justifyContent: "center",
+    paddingLeft: 30,
+    paddingTop: 30,
+
+
+  },
+  bodyText2:{
+    justifyContent: "center",
+    paddingLeft: 30,
+    paddingTop: 10,
+  },
+  footer:{
+    justifyContent: "center",
+    alignItems: "center",
+
+  },
+  avatarLogog:{
+    resizeMode: "stretch",
+    height: 30,
+    width: 30,
+  },
+  avatarName:{
+    fontWeight:"bold",
+    fontStyle:"italic",
+    fontSize: 15,
   }
 });
